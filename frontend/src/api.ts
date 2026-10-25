@@ -1,6 +1,6 @@
 import type { AppConfig, DecisionView, MetricsResponse, SweepRow } from "./types";
 
-const API = import.meta.env.VITE_API_URL ?? "http://localhost:8000";
+const API = (import.meta.env.VITE_API_URL ?? "http://localhost:8000").replace(/\/+$/, "");
 
 async function get<T>(path: string, params: Record<string, string | number> = {}): Promise<T> {
   const qs = new URLSearchParams(
