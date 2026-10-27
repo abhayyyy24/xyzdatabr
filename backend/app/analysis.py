@@ -46,8 +46,7 @@ def build_decision_dataset(
     """Actuals left-joined with the decision-time forecast. Targets with no
     available forecast keep NaN so coverage gaps stay visible.
 
-    error = forecast - actual. Positive means the forecast was too high
-    (wind over-predicted), so the buyer would under-procure from thermal."""
+    error = forecast - actual. Positive means the forecast was too high"""
     a = actuals.copy()
     a["startTime"] = _utc(a["startTime"])
     a = a.rename(columns={"generation": "actual"})[["startTime", "actual"]]

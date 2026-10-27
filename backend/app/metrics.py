@@ -7,7 +7,6 @@ import pandas as pd
 
 UK_TZ = "Europe/London"
 
-
 def _num(x):
     if x is None:
         return None

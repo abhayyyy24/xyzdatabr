@@ -65,7 +65,7 @@ def timeseries(
 @app.get("/api/decision-view")
 def decision_view(delivery_date: date, cutoff_hour: int = CutoffHour):
     """What the buyer knew when deciding for one delivery day: which forecast
-    run(s) were the latest available, and the resulting hourly curve."""
+    runs were the latest available, and the resulting hourly curve."""
     _check_range(delivery_date, delivery_date)
     day = filter_dates(get_dataset(cutoff_hour), delivery_date, delivery_date)
     hourly = day.dropna(subset=["forecast"])
